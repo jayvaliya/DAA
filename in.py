@@ -8,7 +8,6 @@ for i in range(1,len(arr)-1):
         arr[j+1]=arr[j]
         j-=1
     arr[j+1]=temp
-    
-    
-print(arr)
 
+
+print(arr)

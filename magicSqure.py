@@ -1,21 +1,26 @@
+# Print magic squre
 
-# li=[[0, 0, 0, 0, 0], [0, 0, 0, 0, 0], [0, 0, 0, 0, 0], [0, 0, 0, 0, 0], [0, 0, 0, 0, 0]]
+# Take user input for the size of the matrix
+n = int(input("Enter the size of the matrix (n x n): "))
 
-li=[[0,0,0],[0,0,0],[0,0,0]]
+# Initialize a 2D list (matrix) with all zeros
+li = [[0] * n for _ in range(n)]
 
-n=3
+# Initialize variables for matrix manipulation
+i = 0
+j = n // 2
 
-i=0
-j=n//2
-
-for x in range(1,n*n+1):
-    li[i][abs(j)]=x
-    if x%n==0:
-        i=(i+1)%n
+# Fill the matrix with numbers from 1 to n*n in a specific pattern
+for x in range(1, n*n+1):
+    li[i][abs(j)] = x  # Place current number in the matrix
+    
+    # Update row index
+    if x % n == 0:
+        i = (i + 1) % n  # Move to the next row when a full row is filled
     else:
-        i=abs((i-1)%n)
-        j=(j+1)%n
+        i = abs((i - 1) % n)  # Move up one row
+        j = (j + 1) % n  # Move right one column
 
 # Print the Matrix
-for i in range(n):
-    print(li[i])
+for row in li:
+    print(row)
